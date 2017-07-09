@@ -1,6 +1,7 @@
 body {
 	font-family: 'Open Sans', sans-serif;
-	background: url("https://static.pexels.com/photos/226460/pexels-photo-226460.jpeg") no-repeat center center fixed;
+	background: url("/img/homelesswoman1.jpg") no-repeat center center fixed;
+	color: #FFF;
 }
 
 h3 {
@@ -14,20 +15,43 @@ a {
 }
 a:hover {
 	text-decoration: none;
-	color: #4CAF50;
+	color: #a6483e;
 }
 
 a#logo {
-	color: #4CAF50;
+	color: #a6483e;
+	font-size: 2em;
 }
 
 .oswald {
 	font-family: 'Oswald', sans-serif;
 }
 
+.navbar-default {
+	background: none;
+	border: none;
+}
+.navbar-default button {
+	border: none;
+	border-radius: 0;
+}
+
+.navbar-default .nav-brand {
+	font-weight: 400;
+}
+
+.navbar-default li {
+	font-weight: 300;
+	font-size: 1.5em;
+}
+
 #name{
-	font-size: 2em;
-	margin: 1em 0 0 1em;
+	/* font-size: 2em; */
+	margin: 2em 0 0 2em;
+}
+
+.boxes{
+	color: black;
 }
 
 .container-NOPE {
@@ -81,7 +105,7 @@ h3 {
 	font-family: 'Oswald', sans-serif;
 	font-size: 2em;
 	color: white;
-	background-color: #4CAF50;
+	background-color: #a6483e;
 	min-width: 8em;
 	max-width: 9em;
 	text-align: center;
@@ -93,7 +117,7 @@ h3 {
 
 #cta:hover{
 	background-color: white;
-	color: #4CAF50;
+	color: #a6483e;
 }
 
 #forms{
@@ -118,22 +142,6 @@ br {
 	margin-bottom: 25px;
 }
 
-/* 
-input{
-	margin-bottom: 1.5em;
-	margin-left: 1em;
+#request-header {
+	margin-bottom: 25px;
 }
-
-<<<<<<< HEAD
-a{
-	text-decoration: none;
-	color: white;
-}
-<<<<<<< HEAD
-=======
-
-a:hover {
-	color: #4CAF50;
-} */
-
->>>>>>> 4c60f43a2826928442ac92d2a8479b5ad536cd95
