@@ -1,23 +1,27 @@
 <html>
 	<header>
 		<title>Name - Request Service</title>
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="/stylesheets/style.css"/>
-		<link href="https://fonts.googleapis.com/css?family=Oswald:300" rel="stylesheet">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	</header>
 	<body>
-		<div class="container">
-			<div id="name">Name</div>
-			<div id="forms">
-				Your name:<br>
-				<input type="text" placeholder="first and/or last"><br>
-				Phone Number (if you have one):<br>
-				<input type="text" placeholder="ex) 6501234567"><br>
-				Address or description of your location:<br>
-				<textarea name="paragraph_text" cols="50" rows="10" placeholder="ex) 220 Market St. or McDonald's on Sutter St."></textarea>
-			</div>
-			<div id="cta">
+		<div class="containter-fluid oswald" id="name">
+			<a id="logo" href="../"><h1>Name</h1></a>
+		</div>
+		<div class="containter" id="forms">
+			<p class="fields">Your name:</p>
+			<input class="boxes" type="text" placeholder="first and last">
+			<br>
+			<p class="fields">Phone Number (if you have one):</p>
+			<input class="boxes" type="text" placeholder="ex) 6501234567">
+			<br>
+			<p class="fields">Address or description of your location:</p>
+			<textarea class="boxes" name="paragraph_text" rows="8" placeholder="ex) 220 Market St. or McDonald's on Sutter St."></textarea>
+			<br>
+			<button onclick="location.href='../';" id="cta">
 				Submit
-			</div>	
+			</button>
 		</div>
 	</body>
 </html>
