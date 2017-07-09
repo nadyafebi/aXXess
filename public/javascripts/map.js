@@ -19,6 +19,12 @@ function initMap() {
   });
   directionsDisplay.setMap(map);
 
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function (position) {
+      start = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+      console.log(start);
+    });
+  }
 }
 
 function calcRoute() {
