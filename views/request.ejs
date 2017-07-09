@@ -1,23 +1,44 @@
 <html>
 	<header>
-		<title>Name - Request Service</title>
+		<title>Request a Dervice || aXXess</title>
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald" rel="stylesheet">
-		<link rel="stylesheet" type="text/css" href="/stylesheets/style.css"/>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="/stylesheets/style.css"/>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>	
 	</header>
 	<body>
-		<div class="containter-fluid oswald" id="name">
+		<nav class="navbar navbar-default">
+			<div class="container-fluid oswald" id="name">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+		        		<span class="icon-bar"></span>
+		        		<span class="icon-bar"></span>
+		        		<span class="icon-bar"></span>
+	    			</button>
+					<a class="navbar-brand" href="../" id="logo">aXXess</a>
+	    		</div>
+	    		<div class="navbar-collapse collapse navbar-right" id="myNavbar">
+				    <ul class="nav navbar-nav">
+					    <li><a href="#">About Us</a></li>
+					    <li><a href="#">Request a Delivery</a></li>
+				    </ul>
+				</div>
+			</div>
+		</nav>
+		<!--<div class="containter-fluid oswald" id="name">
 			<a id="logo" href="../"><h1>Name</h1></a>
-		</div>
+		</div>-->
 		<div class="containter" id="forms">
+			<h3 id="request-header">Request a Delivery</h3>
 			<p class="fields">Your name:</p>
 			<input class="boxes" type="text" placeholder="first and last">
 			<br>
-			<p class="fields">Phone Number (if you have one):</p>
+			<p class="fields">Phone Number:</p>
 			<input class="boxes" type="text" placeholder="ex) 6501234567">
 			<br>
-			<p class="fields">Address or description of your location:</p>
-			<textarea class="boxes" name="paragraph_text" rows="8" placeholder="ex) 220 Market St. or McDonald's on Sutter St."></textarea>
+			<p class="fields">Address or location description</p>
+			<textarea class="boxes" name="paragraph_text" rows="4" placeholder="ex) 220 Market St. or McDonald's on Sutter St."></textarea>
 			<br>
 			<button onclick="location.href='../';" id="cta">
 				Submit
