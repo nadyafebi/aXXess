@@ -197,3 +197,11 @@ function complete() {
     location.reload();
   }, 2000);
 }
+
+function cancel() {
+  $.post("/cancel", function(data, status){
+  });
+  setTimeout(function(){
+    location.reload();
+  }, 2000);
+}

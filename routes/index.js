@@ -98,15 +98,20 @@ router.post('/complete', (req, res) => {
   });
 });
 
-module.exports = router;
+router.post('/cancel', (req, res) => {
+  MongoClient.connect(url, function(err, db) {
+    if (err) throw err;
+    db.collection("help").deleteOne({});
+    getDatabase();
+  });
 
-// Twilio Test
-/*
-client.messages.create({
-   to: "+19253395106",
-   from: "+15103301417",
-   body: "HELLO DIANE"
-}, function(err, message) {
-   console.log(message.sid);
+  client.messages.create({
+     to: "+19253395106",
+     from: "+15103301417",
+     body: "Your request is declined! I'm sorry our driver cannot reach you."
+  }, function(err, message) {
+     console.log(message.sid);
+  });
 });
-*/
+
+module.exports = router;
