@@ -1,27 +1,40 @@
-<!DOCTYPE html>
+<!DOCTYPE html5>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    <link rel='stylesheet' href='/stylesheets/map.css' />
-    <meta http-equiv="refresh" content="60">
-  </head>
-  <body>
-    <div id="nav">
-      <h1><%= title %></h1>
-      <p id="name"><%= name %></p>
-      <p id="address"><%= location %></p>
+<head>
+  <title>AppName - <%= title %></title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <link rel='stylesheet' href='/stylesheets/driver.css' />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <!-- User Information -->
+  <div class="inforow">
+    <div class="infocolumn">
+      <p>Next Delivery:</p>
+      <h1 id="clientName">Loading...</h1>
+      <p id="clientAddress">Loading...</p>
     </div>
+  </div>
 
-    <div id="content">
-      <div id="map"></div>
-    </div>
+  <!-- Buttons -->
+  <div class="float-button" id="complete">
+    <img src="img/star.png" />
+  </div>
 
-    <!-- Scripts -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script async defer
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBbD4TnXobioui4xPnHAttFuhhagzDoijU&callback=initMap">
-    </script>
-    <script src="javascripts/map.js"></script>
-  </body>
+  <div class="float-button" id="cancel">
+    <img src="img/cancel.png" />
+  </div>
+
+  <!-- Map, DO NOT CHANGE -->
+  <div id="content">
+    <div id="map"></div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBbD4TnXobioui4xPnHAttFuhhagzDoijU&callback=initMap">
+  </script>
+  <script src="javascripts/map.js"></script>
+</body>
 </html>

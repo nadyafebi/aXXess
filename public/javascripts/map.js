@@ -7,6 +7,7 @@ var directionsService;
 var start;
 var end;
 var realAddress;
+var currentData;
 
 // ===
 // MAP
@@ -24,7 +25,11 @@ function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
     // Center at SF Bay Area.
     center: {lat: 37.8272, lng: -122.2913},
-    zoom: 10
+    zoom: 10,
+
+    // UI settings.
+    disableDefaultUI: true,
+    zoomControl: true
   });
 
   // Set Direction Service to map.
@@ -34,25 +39,89 @@ function initMap() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function (position) {
       start = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-      findAddress();
+      findRequest();
     });
   }
 
-  function findAddress() {
-    // Get shelter address.
-    var address = document.getElementById("address").innerHTML;
+  // Display requests.
+  function findRequest() {
+    var url = "/data";
+    $.getJSON(url, function(data) {
+      console.log(data);
+      currentData = data;
+
+      // Make marker for each element.
+      data.forEach(function (element) {
+        console.log("TEST");
+        // Get address.
+        var eachAddress = element.location;
+
+        // Format address.
+        eachAddress = eachAddress.split(' ').join('+');
+
+        findAddress(eachAddress)
+      });
+      var currentAddress = data[0].location;
+      findCurrentAddress(currentAddress);
+    });
+  }
+
+  // Get data from Geocoding API.
+  function findCurrentAddress(address) {
+    // Format address.
+    address = address.split(' ').join('+');
+
+    // Get data from Geocoding API.
     var url = "https://crossorigin.me/https://maps.googleapis.com/maps/api/geocode/json?address=" + address + "&key=AIzaSyBbD4TnXobioui4xPnHAttFuhhagzDoijU";
     $.getJSON(url, function(data) {
-      console.log(data)
       end = data.results[0].geometry.location;
       realAddress = data.results[0].formatted_address;
       userDone();
     });
   }
 
+  function findAddress(address) {
+    // Format address.
+    address = address.split(' ').join('+');
+
+    // Get data from Geocoding API.
+    var url = "https://crossorigin.me/https://maps.googleapis.com/maps/api/geocode/json?address=" + address + "&key=AIzaSyBbD4TnXobioui4xPnHAttFuhhagzDoijU";
+    $.getJSON(url, function(data) {
+      var loc = data.results[0].geometry.location;
+      drawMarkers(loc);
+    });
+  }
+
+  function drawMarkers(loc) {
+    // Draw marker.
+    var womenImage = "img/tampon.png";
+    var eachMarker = new google.maps.Marker({
+      position: loc,
+      map: map,
+      icon: womenImage
+    });
+  }
+
+  /*
+  function findAddress() {
+    // Get shelter address.
+    var address = document.getElementById("clientAddress").innerHTML;
+
+
+    // Get data from Geocoding API.
+    var url = "https://crossorigin.me/https://maps.googleapis.com/maps/api/geocode/json?address=" + address + "&key=AIzaSyBbD4TnXobioui4xPnHAttFuhhagzDoijU";
+    $.getJSON(url, function(data) {
+      end = data.results[0].geometry.location;
+      realAddress = data.results[0].formatted_address;
+      userDone();
+    });
+  }*/
+
   // Get direction.
   function userDone() {
     console.log(end);
+    document.getElementById("clientName").innerHTML = currentData[0].name;
+    document.getElementById("clientAddress").innerHTML = currentData[0].location;
     calcRoute();
   }
 }
@@ -72,14 +141,15 @@ function calcRoute() {
     icon: truckImage
   });
 
+  /*
   // Make info window for user.
-  var name = document.getElementById("name").innerHTML;
-  var address = document.getElementById("address").innerHTML;
+  var name = document.getElementById("clientName").innerHTML;
+  var address = document.getElementById("clientAddress").innerHTML;
   address = address.split('+').join(' ');
   var contentString = "<p><b>" + name + "</b></p> <p>" + realAddress + "</p>";
   var infowindow = new google.maps.InfoWindow({
    content: contentString
-  });
+ });*/
 
   // Draw marker for the user.
   var womanImage = "img/tampon.png";
@@ -89,6 +159,7 @@ function calcRoute() {
     icon: womanImage
   });
 
+/*
   womanMarker.addListener('click', function() {
     infowindow.open(map, womanMarker);
   });
@@ -96,7 +167,7 @@ function calcRoute() {
   var infowindow = new google.maps.InfoWindow({
     content: contentString
   });
-
+*/
 
 
   var request = {

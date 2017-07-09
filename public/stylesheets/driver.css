@@ -1,0 +1,53 @@
+/* Main */
+body {
+  background: none;
+  background-color: #F5888D;
+  color: rgba(0, 0, 0, 0.75);
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+}
+
+.inforow {
+  height: 25vh;
+  width: 100%;
+}
+
+.infocolumn {
+  padding: 0.75% 5%;
+}
+
+#content {
+  height: 75vh;
+  width: 100%;
+}
+
+/* Floating Button */
+
+.float-button {
+  position: fixed; /* Fixed/sticky position */
+  z-index: 99;
+  width: 75px;
+  height: 75px;
+  border-radius: 100px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+#complete {
+  top: 20vh;
+  right: 150px;
+  background-color: #FFEB3B;
+}
+
+#cancel {
+  top: 20vh;
+  right: 50px;
+  background-color: #F44336;
+}
+
+/* Map */
+#map {
+  height: 100%;
+  width: 100%;
+}
