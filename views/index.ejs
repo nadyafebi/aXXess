@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 	<header>
 		<title>Name</title>
@@ -7,38 +8,43 @@
 		<link rel="stylesheet" type="text/css" href="/stylesheets/style.css"/>
 	</header>
 	<body>
-		<div class="container-fluid" id="name"><a id="logo" href="#"><h1 class="oswald">Name</h1></a></div>
+		<div class="container-fluid oswald" id="name">
+			<a id="logo" href="#"><h1>Name</h1></a>
+		</div>
 		<div class="container" id="blurb">
-			<h1>Every woman deserves the simple dignity of a healthy period.</h1>
+			<h1>Every woman deserves the dignity of a healthy period.</h1>
 			<p>We bring menstrual supplies to homeless women when they need them.</p>
 		</div>
 		<div class="container" id="upcoming">
 			<h3>Upcoming Delivery Dates:</h3>
 			<div class="row">
 				<div class="col-xs-6 del-loc th">Location</div>
-				<div class="col-xs-6 del-time th">Approximate time</div>
+				<div class="col-xs-6 del-time th">Date + Time</div>
 			</div>
 			<div class="row">
 				<div class="col-xs-6 del-loc">MSC Homeless Shelter</div>
-				<div class="col-xs-6 del-time">8PM</div>
+				<div class="col-xs-6 del-time">THU 8pm</div>
 			</div>
 				<div class="col-xs-6 del-loc">The Sanctuary</div>
-				<div class="col-xs-6 del-time">8:40PM</div>
+				<div class="col-xs-6 del-time">FRI 11am</div>
 			<div class="row">
 				<div class="col-xs-6 del-loc">Next Door Shelter</div>
-				<div class="col-xs-6 del-time">9PM</div>
+				<div class="col-xs-6 del-time">FRI 12:30pm</div>
 			</div>
 			<div class="row">
 				<div class="col-xs-6 del-loc">Navigation Center</div>
-				<div class="col-xs-6 del-time">9:40PM</div>
+				<div class="col-xs-6 del-time">SAT 9:40pm</div>
 			</div>
 		</table>
 		</div>
-		<div class="container">
+		<div class="container" id="forms">
 			<h3 id="text">Don't see a location near you?</h3>
-			<div class="oswald" id="cta">
+			<!--div id="cta">
 				<a href="request">Request Delivery</a>
-			</div>
+			</div>-->
+			<button onclick="location.href='request';" id="cta">
+				Request Delivery
+			</button>
 		</div>
 
 	</body>

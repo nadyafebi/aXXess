@@ -3,6 +3,11 @@ body {
 	background: url("https://static.pexels.com/photos/226460/pexels-photo-226460.jpeg") no-repeat center center fixed;
 }
 
+h3 {
+	text-align: center;
+	font-family: 'Oswald', sans-serif;
+}
+
 a {
 	text-decoration: none;
 	color: white;
@@ -65,33 +70,64 @@ h3 {
 }
 .th {
 	font-weight: 600;
+	font-size: 1.2em;
 }
 
-/* #text{
-	text-align: center;
+#text{
 	margin-top: 1.5em;
-} */
+}
 
 #cta{
+	font-family: 'Oswald', sans-serif;
 	font-size: 2em;
 	color: white;
 	background-color: #4CAF50;
-	width: 8em;
+	width: 9em;
 	text-align: center;
+	border: none;
 	border-radius: 1em;
-	margin: .3em auto 0;
+	padding: .2em;
+	margin: .3em;
 }
 
 #cta:hover{
 	background-color: white;
+	color: #4CAF50;
 }
 
 #forms{
+	font-family: 'Open Sans', sans-serif;
+	font-size: 1.2em;
+	margin: 1em auto;
 	text-align: center;
-	margin: 1em;
+}
+.fields {
+	font-weight: bold;
+}
+.boxes {
+	padding: 10px;
+	width: 100%;
+	max-width: 320px;
+	max-height: 200px;
+	border: none;
 }
 
 input{
 	margin-bottom: 1.5em;
+	margin-left: 1em;
+}
+/*
+
+<<<<<<< HEAD
+a{
+	text-decoration: none;
+	color: white;
 }
 
+a:hover {
+	color: #4CAF50;
+} */
+
+br {
+	margin-bottom: 25px;
+}
