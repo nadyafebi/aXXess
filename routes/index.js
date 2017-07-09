@@ -16,6 +16,7 @@ var url = "mongodb://admin:1234@ds153392.mlab.com:53392/hack4humanity2017";
 // Get database.
 var data = [];
 function getDatabase() {
+  data = [];
   MongoClient.connect(url, function(err, db) {
   if (err) throw err;
   db.collection("help").find({}).forEach(function (result) {
@@ -86,6 +87,14 @@ router.post('/sms', (req, res) => {
   twiml.message("Your request is accepted! Please wait for our staff to come.");
   res.writeHead(200, {'Content-Type': 'text/xml'});
   res.end(twiml.toString());
+});
+
+router.post('/complete', (req, res) => {
+  MongoClient.connect(url, function(err, db) {
+    if (err) throw err;
+    db.collection("help").deleteOne({});
+    getDatabase();
+  });
 });
 
 module.exports = router;
