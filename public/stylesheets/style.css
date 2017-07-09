@@ -1,6 +1,7 @@
 body {
 	font-family: 'Open Sans', sans-serif;
-	background: url("https://static.pexels.com/photos/226460/pexels-photo-226460.jpeg") no-repeat center center fixed;
+	background: url("/img/homelesswoman1.jpg") no-repeat center center fixed;
+	color: #FFF;
 }
 
 h3 {
@@ -47,6 +48,10 @@ a#logo {
 #name{
 	/* font-size: 2em; */
 	margin: 2em 0 0 2em;
+}
+
+.boxes{
+	color: black;
 }
 
 .container-NOPE {
