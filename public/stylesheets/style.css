@@ -1,4 +1,22 @@
-body{
+body {
+	font-family: 'Open Sans', sans-serif;
+	background: url("https://static.pexels.com/photos/226460/pexels-photo-226460.jpeg") no-repeat center center fixed;
+}
+
+a {
+	text-decoration: none;
+	color: white;
+}
+a:hover {
+	text-decoration: none;
+	color: #4CAF50;
+}
+
+a#logo {
+	color: #4CAF50;
+}
+
+.oswald {
 	font-family: 'Oswald', sans-serif;
 }
 
@@ -7,40 +25,52 @@ body{
 	margin: 1em 0 0 1em;
 }
 
-.container{
+.container-NOPE {
 	background: url("https://static.pexels.com/photos/226460/pexels-photo-226460.jpeg") no-repeat center center fixed;
 	 /* Set rules to fill background */
-  min-height: 100%;
-  min-width: 1024px;
+	min-height: 100%;
+	min-width: 1024px;
 	
-  /* Set up proportionate scaling */
-  width: 100%;
-  height: auto;
+	/* Set up proportionate scaling */
+	width: 100%;
+	height: auto;
 	
-  /* Set up positioning */
-  position: fixed;
-  top: 0;
-  left: 0;
-
-  margin: auto;
+	/* Set up positioning */
+	position: fixed;
+	top: 0;
+	left: 0;
+	margin: auto;
 }
 
 #blurb{
 	text-align: center;
 	width: 80%;
-	font-size: 3.5em;
+	/*font-size: 3.5em;*/
 	margin: .7em auto;
 }
 
-#upcoming, table{
+/* #upcoming, table{
 	margin: auto;
 	text-align: center;
+} */
+
+h3 {
+	text-align: center;
+}
+.del-loc {
+	text-align: right;
+}
+.del-time {
+	text-align: left;
+}
+.th {
+	font-weight: 600;
 }
 
-#text{
+/* #text{
 	text-align: center;
 	margin-top: 1.5em;
-}
+} */
 
 #cta{
 	font-size: 2em;
@@ -65,11 +95,3 @@ input{
 	margin-bottom: 1.5em;
 }
 
-a{
-	text-decoration: none;
-	color: white;
-}
-
-a:hover{
-	color: #4CAF50;
-}

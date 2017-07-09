@@ -1,43 +1,45 @@
 <html>
 	<header>
 		<title>Name</title>
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald" rel="stylesheet"> 
+		<!--<link href="https://fonts.googleapis.com/css?family=Oswald:300,600" rel="stylesheet">-->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="/stylesheets/style.css"/>
-		<link href="https://fonts.googleapis.com/css?family=Oswald:300" rel="stylesheet">
 	</header>
 	<body>
-		<div class="container">
-			<div id="name">Name</div>
-			<div id="blurb">We bring menstrual supply to homeless women when they need them.</div>
-			<div id="upcoming">
-				Upcoming Delivery Dates:
-			<table>
-				<tr>
-					<th>Location</th>
-					<th>Approximate time</th>
-
-				</tr>
-				<tr>
-					<td>MSC Homeless Shelter</td>
-					<td>8PM</td>
-				</tr>
-					<td>The Sanctuary</td>
-					<td>8:40PM</td>
-				<tr>
-					<td>Next Door Shelter</td>
-					<td>9PM</td>
-				</tr>
-				<tr>
-					<td>Navigation Center</td>
-					<td>9:40PM</td>
-				</tr>
-			</table>
+		<div class="container-fluid" id="name"><a id="logo" href="#"><h1 class="oswald">Name</h1></a></div>
+		<div class="container" id="blurb">
+			<h1>Every woman deserves the simple dignity of a healthy period.</h1>
+			<p>We bring menstrual supplies to homeless women when they need them.</p>
+		</div>
+		<div class="container" id="upcoming">
+			<h3>Upcoming Delivery Dates:</h3>
+			<div class="row">
+				<div class="col-xs-6 del-loc th">Location</div>
+				<div class="col-xs-6 del-time th">Approximate time</div>
 			</div>
-			<div id="text">Don't see a location near you?</div>
-			<div id="cta">
+			<div class="row">
+				<div class="col-xs-6 del-loc">MSC Homeless Shelter</div>
+				<div class="col-xs-6 del-time">8PM</div>
+			</div>
+				<div class="col-xs-6 del-loc">The Sanctuary</div>
+				<div class="col-xs-6 del-time">8:40PM</div>
+			<div class="row">
+				<div class="col-xs-6 del-loc">Next Door Shelter</div>
+				<div class="col-xs-6 del-time">9PM</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-6 del-loc">Navigation Center</div>
+				<div class="col-xs-6 del-time">9:40PM</div>
+			</div>
+		</table>
+		</div>
+		<div class="container">
+			<h3 id="text">Don't see a location near you?</h3>
+			<div class="oswald" id="cta">
 				<a href="request">Request Delivery</a>
 			</div>
 		</div>
-
 
 	</body>
 </html>
