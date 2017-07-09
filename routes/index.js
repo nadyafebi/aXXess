@@ -41,6 +41,7 @@ router.get('/', function(req, res, next) {
 
 router.get('/driver', function(req, res, next) {
   res.render('driver', { title: 'Driver'});
+  getDatabase();
 });
 
 router.get('/request', function(req, res, next) {

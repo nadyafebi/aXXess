@@ -171,7 +171,17 @@ function calcRoute() {
   };
   directionsService.route(request, function(result, status) {
     if (status == 'OK') {
+      // Display to map.
       directionsDisplay.setDirections(result);
+
+      // Calculate distance.
+      document.getElementById("distance").innerHTML = result.routes[0].legs[0].distance.text;
+
+      // Animate stuffs.
+      $('#overlay').fadeOut("ease", function () {
+        $('#complete').animate({ bottom: "2.5vh" }, "ease");
+        $('#cancel').animate({ bottom: "2.5vh" }, "ease");
+      });
     }
   });
 }
@@ -183,5 +193,7 @@ function calcRoute() {
 function complete() {
   $.post("/complete", function(data, status){
   });
-  location.reload(true);
+  setTimeout(function(){
+    location.reload();
+  }, 2000);
 }
