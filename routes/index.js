@@ -1,17 +1,21 @@
+// dotenv Setup
+require('dotenv').config();
+var KEY = process.env;
+
 // Express Setup
 var http = require('http');
 var express = require('express');
 var router = express.Router();
 
 // Twilio Setup
-var accountSid = 'AC7e4969825a94132e9d2684bc11ae547b';
-var authToken = '7a7876cd6794a7142628ec81238f04ef';
+var accountSid = KEY.ACCOUNTSID;
+var authToken = KEY.AUTHTOKEN;
 var client = require('twilio')(accountSid, authToken);
 const MessagingResponse = require('twilio').twiml.MessagingResponse;
 
 // MongoDB Setup
 var MongoClient = require('mongodb').MongoClient;
-var url = "mongodb://admin:1234@ds153392.mlab.com:53392/hack4humanity2017";
+var url = "mongodb://" + KEY.DBUSER + ":" + KEY.DBPASS + "@ds153392.mlab.com:53392/hack4humanity2017";
 
 // Get database.
 var data = [];
@@ -106,8 +110,8 @@ router.post('/cancel', (req, res) => {
   });
 
   client.messages.create({
-     to: "+19253395106",
-     from: "+15103301417",
+     to: KEY.PHONERECEIVE,
+     from: KEY.PHONESENDER,
      body: "Your request is declined! I'm sorry our driver cannot reach you."
   }, function(err, message) {
      console.log(message.sid);
