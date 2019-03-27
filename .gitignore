@@ -1,2 +1,3 @@
 .env
 public/javascripts/config.js
+node_modules
